@@ -1,0 +1,141 @@
+a{
+    text-decoration: none;
+}
+.header {
+    width: 100%;
+    height:50px;
+    margin-top: 0%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #dee0df;
+    box-shadow: #dee0df 0px 0px 58px;
+    position: relative;
+}
+.top_left {
+    width: 16%;
+    height: 50px;
+    text-align: left;
+    padding-top: 5px;
+    float: left;
+    
+}
+.top_left a{
+    padding-left: 5px;
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+}
+.top_left a:hover{
+    color: darkblue;
+}
+
+.top_right {
+    width:14%;
+    height: 50px;
+    margin-right: 27px;
+    float: right;
+}
+.top_right ul{
+    list-style: none;
+    float: left;
+}
+.top_right li{
+    padding-right: 5px;
+}
+.top_right a{
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.top_right a:hover{
+    color: chartreuse;
+}
+.top_middle{
+    width: 67%;
+    height: 50px;
+    float: left;
+    position: relative;
+    
+}
+.parent{
+    height: 34px;
+    width:206px ;
+    right: 6px;
+    position: absolute;
+    padding-top: 30px;
+    float: right;
+}
+.top_middle img{
+    position: absolute;
+    z-index: 1;
+}
+.btn {
+    position: absolute;
+    z-index: 2;
+    margin-left: 339px;
+    height: 20px;
+    width: 70px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.3)
+}
+.btn:hover,.btn:focus{
+    background-color:rgba(255, 255, 255, 0);
+}
+.search {
+    position: absolute;
+    z-index: 2;
+    margin-left: 35px;
+    margin-top: 3px;
+    border: none;
+    height: 17px;
+    width: 302px;
+    background: rgba(255, 255, 255, -13.7);
+}
+
+.menu{
+    width: 486px;
+    height: 50px;
+    background-color:#e8e7e3; 
+    font-size: 5px;
+    font-weight: bold;
+    float: left;
+}
+.menu ul{
+    height: 100%;
+    margin: 0px;
+    padding-left: 0px;
+}
+
+.menu_ul_li {
+    padding-left: 21px;
+    padding-right: 21px;
+    padding-top: 48px;
+    padding-bottom: 36px;
+    line-height: 100px;
+    display: inline;
+    cursor: pointer;
+}
+.menu_ul_li:hover{
+    color: black;
+    background-color: #d2d2d2;
+}
+.menu_ul_li a:visited,a:link{
+    color: black;
+}
+.menu_aclick{
+    padding-left: 21px;
+    padding-right: 21px;
+    padding-top: 48px;
+    padding-bottom: 36px;
+    line-height: 100px;
+    display: inline;
+    color: black;
+    background-color: #aaa8a8;
+}
+.menu a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}

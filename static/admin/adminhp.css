@@ -1,0 +1,164 @@
+body a{
+    text-decoration: none;
+}
+body a:visited{
+    text-decoration-color: none;
+}
+
+.adminMenu{
+    float: left;
+    margin-left: 10%;
+    width: 20%;
+    height: auto;
+    margin-top: 5px;
+    background-color: #ffffff;
+    position: relative;
+}
+.adminMenu_header{
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    width: 100%;
+    height: 25%;
+    font-size: 21px;
+    padding: 3px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.adminMenu_header p{
+    margin: 0px;
+}
+.adminMenu_body{
+    width: 100%;
+    height: 75%;
+}
+.adminMenu_body a,a:visited,a:hover,a:active{
+    text-decoration: none;
+}
+.adminMenu_body ul{
+    margin: 0px;
+    width: 100%;
+    list-style: none;
+    padding-left: 0px;
+    font-size: 15px;
+    margin-bottom: 2em;
+}
+.adminMenu_body li{
+    width: 100%;
+    height: 25%;
+}
+.adminMenu_body div{
+    width: 100%;
+    height: 25%;
+    text-align: center;
+}
+.adminMenu_body p{
+    margin: 0px;
+    padding-bottom: 0.5em;
+    padding-top:0.5em;
+}
+.menu_click{
+    background-color:#a6c635;
+}
+.menu_unclick{
+    background-color: #ffffff;
+}
+
+
+
+
+
+.adminBody{
+    float: left;
+    width: 796.5px;
+    left: 6px;
+    height: auto;
+    min-height: 400px;
+    margin-top: 5px;
+    margin-left: 1px;
+    background-color: #ffffff;
+    position: relative;
+}
+.adminBody div{
+    width: 786.5px;
+    min-height: 400px;
+    height: auto;
+    margin: 5px;
+    float: left;
+    position: absolute;
+}
+
+.admin_sign{
+    font-size: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.admin_sign thead{
+    text-align: center;
+    height: 20px;
+    font-size: 25px;
+    font-weight: 800;
+    background-color: #aaa;
+}
+.admin_sign table{ 
+    
+    width: 100%;
+    background: #ffffff;
+    border-collapse: collapse;
+    border: 1px solid #aaa;
+}
+.admin_sign tbody tr{
+    margin-top: 1px;
+    background-color: bisque;
+
+}
+.admin_sign tbody td{
+    text-align: center;
+}
+
+.admin_userModify thead{
+    text-align: center;
+    height: 20px;
+    font-size: 25px;
+    font-weight: 800;
+    background-color: #aaa;
+}
+.admin_userModify table{ 
+    
+    width: 100%;
+    background: #ffffff;
+    border-collapse: collapse;
+    border: 1px solid #aaa;
+}
+.admin_userModify tbody tr{
+    margin-top: 0px;
+    background-color: bisque;
+
+}
+.admin_userModify tbody td{
+    text-align: center;
+}
+
+
+.admin_article ul{
+    width: 100%;
+    list-style: none;
+    float: left;
+}
+.admin_article li{
+    padding-top: 5px;
+}
+.admin_article a{
+    text-decoration: none;
+}
+.admin_article a:hover{
+    color: darkgrey;
+}
+.admin_article button{
+    width: 200px; 
+}
+.adminhp_foot{
+    position: absolute;
+    bottom:0px;
+    float:center;
+    width:100%;
+    margin-top: 10px;
+}

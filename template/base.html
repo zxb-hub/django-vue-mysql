@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    <link type="text/css" rel="stylesheet" href="{% static '/css/hp.css' %}" />
+    <link type="text/css" rel="stylesheet" href="{% static 'css/login.css' %}" />
+    <link type="text/css" rel="stylesheet" href="{% static 'css/hp.css'%}" />
+    <link type='text/css' rel="stylesheet" href="{% static 'css/base.css'%}">
+    <link type='text/css' rel="stylesheet" href="{% static 'css/header.css'%}">
+    <link type='text/css' rel="stylesheet" href="{% static 'css/footer.css'%}">
+    <script type="text/javascript" src="{% static 'js/hp.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/login.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jQ/jquery-3.4.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/signin.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+    <style>
+        .background {
+            background-image: url("{% static 'img/zhuhai.jpeg'%}");
+            background-repeat: repeat-x;
+        }
+        .hp_background{
+            background-image: url("{% static 'img/fenjin.jpeg'%}");
+            background-repeat: repeat-x;
+            background-size: 100% 768px;
+        }
+    </style>
+</head>
+
+<body class="body">
+{% include 'header.html' %}
+    <div class="main">
+        {% block content %}{% endblock %}
+    </div>
+{% include 'footer.html' %}
+
+</body>
+
+</html>

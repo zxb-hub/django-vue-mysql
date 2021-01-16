@@ -1,0 +1,88 @@
+html{
+    background-color: #f9f9f9;
+}
+.articleBody{
+    height: auto;
+    padding: 0px;
+    margin: 0px;
+    background-color: #f9f9f9;
+}
+.articleHeader{
+    height: 80px;
+    width: 80%;
+    margin-left: 10%;
+    background-color: #ffffff;
+}
+.articleHeader h3{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    /* padding-bottom: 15px; */
+    color: limegreen ;
+    float: left;
+    padding-left: 20px;
+}
+.articleMenu{
+    width: 27%;
+    height: 800px;
+    float: left;
+    margin-left: -140px;
+    background-color: #ffffff;
+    margin-top: 5px;
+    position: relative;
+}
+.articleMenu ul{
+    margin: 10px;
+    list-style: none;
+}
+.articleMenu li{
+    padding-top: 10px;
+}
+.articleMenu p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+}
+.articleMenu a{
+    text-decoration: none;
+}
+.articleMenu a:hover{
+    color: lightgray;
+}
+.articleMain{
+    width: 53%;
+    height: auto;
+    margin-top: 5px;
+    margin-left: 3px;
+    background-color: #ffffff;
+    position: relative;
+    float: left;
+    margin-bottom: 80px;
+}
+.articleMain h3{
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 5px;
+}
+.articleMain h6{
+    padding-top: 3px;
+    padding-left: 5px;
+}
+.articleMain p{
+    height: auto;
+    min-height: 2000px;
+    padding-left: 5px;
+}
+.articleMain a{
+    text-decoration: none;
+}
+.articlePrevious{
+    padding-bottom: 20px;
+    padding-left: 5px;
+    padding-top: 10px;
+    float: left;
+}
+.articleNext{
+    padding-bottom: 20px;
+    padding-right: 5px;
+    padding-top: 10px;
+    float: right;
+}

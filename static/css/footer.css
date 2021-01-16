@@ -1,0 +1,13 @@
+.foot {
+    width: 100%;
+    height: 90px;
+    /* position: absolute; */
+    background-color:#ffffff;
+    text-align: center;
+    font-size: 10px;
+    bottom: 0px;
+    margin-top: 20px;
+}
+.foot iframe{
+    height: 22px;
+}

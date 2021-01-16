@@ -1,0 +1,41 @@
+<template>
+  <div class="foot">
+    <p>皖备12344455号 @ 2020 山鼎竹器.联系电话：13856381684（郑先生）.</p>
+    <p>本站部分图片和内容来源网络，版权归原作者所有，如果认为侵权请告知，我们会立即删除</p>
+    <p>
+      <iframe
+        id="fancybox-frame"
+        name="fancybox-frame1579748917221"
+        frameborder="0"
+        scrolling="no"
+        hspace="0"
+        src="http://i.tianqi.com/index.php?c=code&a=getcode&id=34&h=25&w=280"
+      ></iframe>
+    </p>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Footer',
+  data() {
+    return {};
+  }
+};
+</script>
+
+<style>
+.foot {
+  width: 100%;
+  height: 90px;
+  /* position: absolute; */
+  background-color: #ffffff;
+  text-align: center;
+  font-size: 10px;
+  bottom: 0px;
+  margin-top: 20px;
+}
+.foot iframe {
+  height: 22px;
+}
+</style>

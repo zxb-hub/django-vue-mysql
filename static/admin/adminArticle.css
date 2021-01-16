@@ -1,0 +1,60 @@
+
+.admin_body{
+    margin: 0px;
+    height: auto;
+    min-height: 600px;
+    background-color: #f9f9f9;
+}
+.article_admin{
+    width: 80%;
+    height: auto;
+    min-height: 600px;
+    margin-left: 10%;
+    margin-bottom: 63px;
+    margin-top: 10px;
+}
+.adminAdd_form{
+    width: 100%;
+    height: 100%;
+}
+.adminAdd_form label{
+    display: block;
+    padding: 4px 10px 0 0;
+    float: left;
+    width: 160px;
+    word-wrap: break-word;
+    line-height: 1;
+}
+
+.article_title textarea{
+    width: 760px;
+    height: 40px;
+}
+.article_name textarea{
+    width: 760px;
+    height: 40px;
+}
+.content{
+    width: 760px;
+    height:500px;
+}
+.adminAdd_form button{
+    margin-top: 10px;
+    width: 120px;
+    margin-left: 50%;
+}
+
+
+
+
+
+
+
+
+.adminAA_foot{
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    position: absolute;
+}

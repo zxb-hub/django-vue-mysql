@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link type='text/css' rel="stylesheet" href="{% static 'admin/adminhp.css'%}">
+    <link type='text/css' rel="stylesheet" href="{% static 'css/article.css'%}">
+    <link type='text/css' rel="stylesheet" href="{% static 'admin/adminArticle.css'%}">
+    <link type='text/css' rel="stylesheet" href="{% static 'css/footer.css'%}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <title>文章上传</title>
+</head>
+
+<body class="admin_body">
+    {% include 'admin/adminHead.html' %}
+    <div class="article_admin">
+        <form action="adminArticleAdd" method="GET" class="adminAdd_form">
+            {% csrf_token %}
+            <div class="article_title">
+                <label for="title">上传文章标题</label>
+                <textarea name="title" id="title" cols="30" required rows="10"></textarea>
+            </div>
+            <div class="article_name">
+                <label for="name">上传文章作者</label>
+                <textarea name="name" id="name" cols="30" rows="10"></textarea>
+            </div>
+            <div class="article_content">
+                <label for="content">上传文章正文</label>
+                <textarea name="content" id="content" cols="40" rows="10" class="content"></textarea>
+            </div>
+            <div class="article_date">
+                <label for="date">上传日期</label>
+                <div  style="margin-top: 10px;"><span id='date' name="date"></span>
+                    <script>
+                        setTime();
+                        setInterval("setTime()", 1000);
+                        function setTime(){
+                            var d=new Date();
+                            document.getElementById("date").innerHTML=
+                                d.getFullYear()+"-"+d.getMonth()+"-"+d.getDate()+"  "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds()
+                        }
+                    </script>
+                </div>
+            </div>
+            <button type="submit"><span class="glyphicon glyphicon-open"></span></button>
+        </form>
+    </div>
+    <div class="adminAA_foot">
+        {% include 'footer.html' %}
+    </div>
+
+</body>
+
+</html>

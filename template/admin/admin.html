@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link type='text/css' rel="stylesheet" href="{% static 'admin/admin.css'%}">
+    <link type='text/css' rel="stylesheet" href="{% static 'css/footer.css'%}">
+</head>
+
+<body>
+    <div style="width: 100%; height: 100%;">
+        <div class="adminMain">
+            <h3>super用户登录</h3>
+            <form action="superUserCheck" method="POST">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="{{ adminmessage }}"><br>
+                <input type="password" name="password" placeholder="密码"><br>
+                <p style="color: red;">{{ adminMessage }}</p>
+                <input type="submit" value="登录" style="width: 80px;height: 40px;float: left;margin-left: 130px;border-radius: 5px;">
+            </form>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+
+</html>

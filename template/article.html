@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/article.css'%}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/footer.css'%}">
+    <title>{{ article.title }}</title>
+</head>
+<body>
+    <div class="articleBody">
+        <div class="articleHeader">
+            <a href="/"><h3 style="cursor: pointer;">山鼎竹器</h3></a>
+        </div>
+        <div class="articleMenu">
+            <ul>
+                <li>
+                    <p>个人信息:</p>
+
+                    <ul>
+                        {% if username %}
+                        <li>
+                            <p style="color: saddlebrown;font-size: 10px;">用户名:{{ username }}</p>
+                        </li>
+                        <li>
+                            <p style="color: saddlebrown;font-size: 10px;">注册日期:{{ date }}</p>
+                        </li>
+                        {% else %}
+                        <li><a href="loginJudge">登录</a></li>
+                        <li><a href="signin">注册</a></li>
+                        {% endif %}
+                    </ul>
+                </li>
+                <li>
+                    <p>新闻中心</p>
+                    <ul>
+                        {% for article in articles %}
+                        <li><a href="{{ article.articleId }}">{{ article.title }}</a>
+                        </li>
+                        {% endfor %}
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="articleMain">
+            <h3>{{ article.title }}</h3>
+                <h6>{{ article.articleName }} &nbsp;&nbsp;&nbsp; 最后上传于:{{ article.publishDate }}</h6>
+                <hr style="color: white;">
+                <style>
+                    .article_content_index{
+                        height: auto;
+                        width: 100%;
+                        padding-left: 3px;
+                        padding-right: 3px;
+                    }
+                </style>
+                <div class="article_content_index">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ article.content }}</div>
+                <div class="articlePrevious"><a href="">上一篇:</a></div>
+                <div class="articleNext"><a href="">下一篇:</a></div>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+
+</html>

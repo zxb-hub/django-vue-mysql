@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type='text/css' rel="stylesheet" href="{% static 'css/article.css'%}">
+    <link type='text/css' rel="stylesheet" href="{% static 'admin/adminhp.css'%}">
+    <link type='text/css' rel="stylesheet" href="{% static 'css/footer.css'%}">
+    <link type='text/css' rel="stylesheet" href="{% static 'admin/suerModify.css'%}">
+    <title>Document</title>
+
+</head>
+<body>
+    {% include "admin/adminHead.html" %}
+    <div>
+        <ul>
+        
+        </ul>
+    </div>
+    <div class="modify_foot">
+        {% include "footer.html" %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+     integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link type='text/css' rel="stylesheet" href="{% static 'admin/adminArticle.css'%}">
+    <link type='text/css' rel="stylesheet" href="{% static 'css/article.css'%}">
+    <link type='text/css' rel="stylesheet" href="{% static 'css/footer.css'%}">
+    <link type='text/css' rel="stylesheet" href="{% static 'admin/adminhp.css'%}">
+    <script type="text/javascript" src="{% static 'admin/adminhp.js' %}"></script>
+
+    <title>{{ article.title }}</title>
+</head>
+
+<body class="admin_body">
+    {% include 'admin/adminHead.html' %}
+    <div class="adminMenu">
+        <div class="adminMenu_header">
+            <p>网站管理</p>
+        </div>
+        <div class="adminMenu_body" id="adminMenu_body">
+            <ul>
+                <li>
+                    <div id="menuSign" class="menu_click">
+                        <p><a href="#" onclick="adminHp(this)">注册用户管理</a></p>
+                    </div>
+                </li>
+                <li>
+                    <div id="menuModify">
+                        <p><a href="#" onclick="adminHp(this)">用户资料管理</a></p>
+                    </div>
+                </li>
+                <li>
+                    <div id="menuArticle" >
+                        <p><a href="#" onclick="adminHp(this)">文章管理</a> </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="adminBody">
+        <div class="admin_sign" id="admin_sign" style="display: block;">
+            <table class="sign_table">
+                <thead>
+                    <tr>
+                        <td>编号</td>
+                        <td>用户名</td>
+                        <td>联系方式</td>
+                        <td>注册日期</td>
+                        <td>是否删除用户</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.phone }}</td>
+                        <td>{{ user.date }}</td>
+                        <td><button><a href="superUserCheck/userdel/?user_id={{ user.id }}" ><span class="glyphicon glyphicon-trash" style="width: 40px;border-radius: 1em;"></span></a></button></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="admin_userModify" id="admin_userModify" style="display: none;">
+            <table class="sign_table">
+                <thead>
+                    <tr>
+                        <td>编号</td>
+                        <td>用户名</td>
+                        <td>联系方式</td>
+                        <td>用户权限</td>
+                        <td>修改用户资料</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.phone }}</td>
+                    <td contentEditable="true" id="userNub">{{ user.userNub }}</td>
+                    <td><button><a href="superUserCheck/userModify/?userId={{ user.id }}?userNub=" onclick="userModify()">修改</a></button></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="admin_article" id="admin_article" style="display: none;">
+            <ul>
+                {% for article in articles %}
+                <li><a href="superUserCheck/articleModify/{{ article.title }}/?{{ article.title }}">{{ article.title }}</a></li>
+                {% endfor %}
+            </ul>
+            <a href="superUserCheck/articleAdd"><button class="btn btn-default"style="width:200px;margin-left:30%;margin-top:100px"><span class="glyphicon glyphicon-plus"  aria-hidden="true"></span></button></a>
+        </div>
+    </div>
+    <div class="adminhp_foot">
+        {% include 'footer.html' %}
+    </div>
+    
+        
+    
+   
+    
+</body>
+
+</html>

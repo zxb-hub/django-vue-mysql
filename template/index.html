@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZOgSRMGaMd3exTczmsaL3YKUQNKYomMd">
+    </script>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .head {
+            width: 100%;
+            height: 50px;
+            float: left;
+            border-bottom: 1px;
+            box-shadow: rgba(255, 255, 255, 0.1);
+        }
+
+        .head_logo {
+            padding-left: 20px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            width: 28%;
+            height: 40px;
+            float: left;
+            position: relative;
+        }
+
+        .head_search {
+            width: 54%;
+            height: 50px;
+            padding-left: 121px;
+            padding-top: 11px;
+            padding-bottom: 9px;
+            float: left;
+            position: relative;
+        }
+
+        .head_login {
+            width: 18%;
+            height: 50px;
+            padding-left: 67px;
+            padding-top: 14px;
+            padding-bottom: 16px;
+            float: left;
+            position: relative;
+        }
+
+
+        .ad {
+            height: 100px;
+            width: 70%;
+            float: left;
+            margin-left: 15%;
+            margin-top: 5px;
+        }
+
+
+        .news {
+            margin-top: 5px;
+            float: left;
+            height: 300px;
+            width: 29%;
+            margin-left: 15%;
+            background-color: #f9f9f9;
+            position: relative;
+        }
+
+        .news ul {
+            margin-top: 10px;
+            margin-left: 15px;
+            padding-top: 5px;
+        }
+
+
+        .carousel {
+            width: 40%;
+            height: 300px;
+            float: left;
+            margin-left: 13px;
+            margin-top: 5px;
+            margin-right: 15%;
+            position: relative;
+            background-color: #f9f9f9;
+        }
+
+        .carousel p {
+            position: relative;
+        }
+
+        .carousel ul {
+            position: absolute;
+            list-style: none;
+            bottom: 15px;
+            text-align: center;
+            z-index: 2;
+            top: 152px;
+            margin-left: 183px;
+            height: 15px;
+        }
+
+        .carousel li {
+            border-radius: 50%;
+            line-height: 15px;
+            float: left;
+            text-align: center;
+            width: 15px;
+            margin-left: 5px;
+            background: #aaa;
+            cursor: pointer;
+        }
+
+        .carousel_btn {
+            width: 30px;
+            height: 90px;
+            background-color: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin-top: 44px;
+            z-index: 3;
+            position: absolute;
+            cursor: pointer;
+            padding-top: 32px;
+        }
+
+        #right {
+            float: right;
+            right: 0px;
+        }
+
+        #left {
+            float: left;
+        }
+
+        .photo_introd {
+            margin-top: 210px;
+            width: 100%;
+            height: 110px;
+        }
+
+        .nav {
+            margin-top: 15px;
+            width: 50%;
+            height: 100px;
+            margin-left: 25%;
+            float: left;
+        }
+
+        .nav ul {
+            width: 100%;
+            height: 100%;
+            float: left;
+            list-style: none;
+
+        }
+
+        .nav li {
+            width: 25%;
+            height: 100%;
+            text-align: center;
+            float: left;
+            font-size: 1.5em;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 39px;
+            cursor: pointer;
+        }
+
+        .li_change {
+            background-color: #aaa;
+        }
+
+        .place {
+            width: 65%;
+            height: auto;
+            min-height: 400px;
+            float: left;
+            margin-left: 17.5%;
+            background-color: #f9f9f9;
+            margin-top: 694px;
+            padding-left: 18px;
+            padding-right: 14px;
+            position: absolute;
+            border-radius: 1.5em;
+            margin-bottom: 110px;
+            display: block;
+        }
+
+        .kilang {
+            width: 65%;
+            height: auto;
+            min-height: 400px;
+            float: left;
+            margin-left: 17.5%;
+            background-color: #f9f9f9;
+            margin-top: 694px;
+            padding-left: 18px;
+            padding-right: 14px;
+            position: absolute;
+            border-radius: 1.5em;
+            margin-bottom: 110px;
+            display: none;
+        }
+
+        .introd {
+            width: 65%;
+            height: auto;
+            min-height: 400px;
+            float: left;
+            margin-left: 17.5%;
+            background-color: #f9f9f9;
+            margin-top: 694px;
+            padding-left: 18px;
+            padding-right: 14px;
+            position: absolute;
+            border-radius: 1.5em;
+            margin-bottom: 110px;
+            display: none;
+        }
+
+        .exchange {
+            width: 65%;
+            height: auto;
+            min-height: 400px;
+            float: left;
+            margin-left: 17.5%;
+            background-color: #f9f9f9;
+            margin-top: 694px;
+            padding-left: 18px;
+            padding-right: 14px;
+            position: absolute;
+            border-radius: 1.5em;
+            margin-bottom: 110px;
+            display: none;
+        }
+
+
+
+
+        .foot {
+            width: 100%;
+            height: 100px;
+            text-align: center;
+            float: left;
+            position: relative;
+            bottom: -467px;
+        }
+    </style>
+    <title>山鼎竹器网</title>
+</head>
+
+<body style="background-color: #ffffff;">
+    <div class="head">
+        <div class="head_logo"><a href="/" style="font-size: 30px;">山鼎竹器网</a></div>
+        <div class="head_search">
+            <input type="text" class="search" style="position: absolute; width: 300px;height: 30px;">
+            <img src="static\img\search.jpeg" style="width:365px;height: 30px;position: absolute;">
+            <input type="button" class="search_btn" value="搜索"
+                style="position: absolute;left: 420px;top:13px;width: 63px;margin-top: 2px;background-color: rgba(255,255,255,0.1);border: none;">
+        </div>
+        <div class="head_login" id="head_login">
+            <a href="loginJudge" id="login">登录/注册</a>
+            <button id="ceshidenglu">点击测试登陆状态</button>
+            <a href="#">关于我们</a>
+            <script>
+                $("#ceshidenglu").click(function() {
+                    function login(){
+                        $.ajax({
+                            url:"logon",
+                            contentType:"application/json",
+                            type:'get',
+                            dataType:'json',
+                            success:function(data){
+                                user = data
+                                console.log(user)
+                                if(user == "None"){
+                                    pass;
+                                }
+                                else{
+                                    document.getElementById("head_login").removeChild(document.getElementById("login"));
+                                    var username = document.createElement("a");
+                                    username.href = "#";
+                                    username.innerText = user;
+                                    document.getElementById("head_login").appendChild(username);
+                                }
+
+                            }
+                        })
+                    }
+                    
+                })
+            </script>
+    </div>
+    <div class="ad">
+        <a href="http://mxj123.top/">
+            <img src="static\img\ad\mxj2.png" alt="抹香鲸工具箱" style="height: 100%;width: 19%;">
+            <img src="static\img\ad\mxj1.png" alt="抹香鲸工具箱" style="width: 80.5%;height: 100%;">
+        </a>
+    </div>
+    <div class="ad" style="background-color: rgba(0,0,0,0.1);text-align: center;padding-top: 40px;margin-bottom:5px;">
+        <a
+            href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzI0NzU2MDM1Ng==&scene=124#wechat_redirect"><span>招商广告</span></a>
+    </div>
+    <div class="news">
+        <ul id="news_ul">
+            <li><a href="#" style="font-size: 10px;">欢迎查看山鼎竹器厂新闻</a></li>
+        </ul>
+        <script>
+            $(document).ready(function () {
+                $.ajax({
+                    url: "news_ajax",
+                    contentType: "application/json",
+                    type: 'get',
+                    dataType: "JSON",
+                    success: function (data) {
+                        news = data
+                        console.log(news)
+                        for (var i in news) {
+                            var createLi = document.createElement("li");
+                            var createA = document.createElement("a");
+                            createA.style="font-size: 10px;cursor: pointer;";
+                            createLi.id = i + news[i];
+                            createA.innerText = news[i];
+                            createA.href = "#";
+                            console.log(news[i]);
+                            document.getElementById("news_ul").appendChild(createLi);
+                            document.getElementById(createLi.id).appendChild(createA);
+                        }
+                    },
+                })
+            })
+        </script>
+    </div>
+    <div class="carousel" id="car">
+        <img id="img" src="\static\img\4.jpeg" alt="图片介绍4"
+            style="width: 100%; height: 200px;position: absolute;z-index: 1;">
+        <ul id="list">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <div class="carousel_btn" id="right">&gt;</div>
+        <div class="carousel_btn" id="left">&lt;</div>
+        <div class="photo_introd" id="photo_introd">
+            <div style="width: 95%;height: auto;margin-left: 5px;position: absolute;display: block;" id="introd1" ;>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<strong>图片1</strong>竹丝湖位于安徽省无为市西南端的牛埠镇境内，东临长江，西靠大别山余脉三公山，湖面1.6万余亩，水深平均3米，是无为境内最大的天然淡水湖泊。日前，安徽省水利厅发布了《关于公布安徽省湖泊保护名录（第一批）的通知》，我镇竹丝湖名列其中。
+                </p>
+            </div>
+            <div style="width: 95%;height: auto;margin-left: 5px;position: absolute;display: none;" id="introd2">
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<strong>图片2</strong>竹丝湖深藏于无为西南山区的重峦叠嶂之中，湖水澄碧，波光粼粼，以“三公山下一翡翠”之称而闻名，气势博大；湖岸盘曲，弯岔极多，无纤尘污染，湖心有小岛10余处，似星星点缀。沿途湖岸绿树成
+                    荫，竹林小径，掩映着民舍山村，粉墙青瓦，湖光山色，交相辉映，美景如画。
+                </p>
+            </div>
+            <div style="width: 95%;height: auto;margin-left: 5px;position: absolute;display: none;" id="introd3">
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<strong>图片3</strong>湖内物产丰富，有鱼类20余种，盛产蟹、鳖、虾等珍稀水产品。尤其是天然生长的湖蟹，肉嫩味鲜，脍炙人口，誉扬省内外。
+                </p>
+            </div>
+            <div style="width: 95%;height: auto;margin-left: 5px;position: absolute;display: none;" id="introd4">
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<strong>图片4</strong>竹丝湖原名横山湖，又叫黑沙湖。因湖周山多，每年汛期洪水暴发，将山上的竹丝冲入湖内，当地群众撒网打鱼时，网网带上许多竹丝，故后改称为竹丝湖。
+                </p>
+            </div>
+            <div style="width: 95%;height: auto;margin-left: 5px;position: absolute;display: none;" id="introd5">
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<strong>图片5</strong>竹丝湖美，美就美在竹丝湖水。其一湖清水，生机盎然，形成四季纷呈的自然风光，壮丽迷人。春天，沿湖遍野绿色，夹杂着盛开的野花和鸟鸣、蜂飞、碟舞，越发显得春光明媚；夏天，微风吹拂湖面，青波荡漾，湖边的荷花绽苞怒放，随风摇曳在片片荷叶丛中，构成一幅“微风拂波荷花开”的美丽图画；秋天，淡淡的白云漂浮在蓝蓝的天空，常有一队队雁群飞过，湖中小岛
+                </p>
+            </div>
+        </div>
+        <script>
+            window.onload = function () {
+                var introd = document.getElementById("photo_introd").getElementsByTagName('div');
+                var introd1 = document.getElementById("introd1");
+                var introd2 = document.getElementById("introd2");
+                var introd3 = document.getElementById("introd3");
+                var introd4 = document.getElementById("introd4");
+                var introd5 = document.getElementById("introd5");
+                var car = document.getElementById("car");
+                var img = document.getElementById("img");
+                var li = document.getElementById("list");
+                var btn_left = document.getElementById('left');
+                var btn_right = document.getElementById("right");
+                var allLi = li.getElementsByTagName('li')
+                allLi[0].style.backgroundColor = "yellow";
+                var num = 4;
+                var timer = this.setInterval(starloop, 2000);
+               
+
+                function starloop() {
+                    num++;
+                    changImg();
+                }
+
+                function changImg() {
+                    if (num == 0) {
+                        num = 5;
+                    } else if (num == 6) {
+                        num = 1;
+                    }
+                    img.src = "/static/img/" + num + ".jpeg";
+                    img.alt = '图片介绍' + num;
+                    for (let i = 0; i < allLi.length; i++) {
+                        allLi[i].style.backgroundColor = '#aaa';
+                        introd[i].style.display = "none";
+                    }
+                    allLi[num - 1].style.backgroundColor = 'yellow';
+                    introd[num - 1].style.display = 'block';
+
+                }
+                btn_right.addEventListener('click', starloop)
+                btn_left.addEventListener('click', function () {
+                    num--;
+                    changImg();
+                })
+                car.addEventListener('mouseout', function () {
+                    btn_left.style.display = 'none';
+                    btn_right.style.display = 'none';
+                    timer = setInterval(starloop, 2000);
+                })
+                car.addEventListener('mouseover', function () {
+                    btn_right.style.display = 'block';
+                    btn_left.style.display = 'block';
+                    window.clearInterval(timer);
+                })
+                btn_left.addEventListener('mouseout', deep);
+                btn_left.addEventListener('mouseover', nodeep);
+                btn_right.addEventListener('mouseout', deep);
+                btn_right.addEventListener('mouseover', nodeep);
+
+                function deep() {
+                    this.style.backgroundColor = 'rgba(0,0,0,0.4)'
+                }
+
+                function nodeep() {
+                    this.style.backgroundColor = 'rgba(0,0,0,0.2)'
+                }
+                for (var i = 0; i < allLi.length; i++) {
+                    allLi[i].index = i + 1;
+                    allLi[i].addEventListener('mouseover', function () {
+                        this.style.backgroundColor = 'yellow';
+                        num = this.index;
+                        console.log(num)
+                        changImg();
+                    })
+                }
+            }
+        </script>
+    </div>
+    <div class="nav" id="nav">
+        <ul id="nav_ul">
+            <li>厂址介绍</li>
+            <li>工厂介绍</li>
+            <li>产品详情</li>
+            <li>最新价格</li>
+        </ul>
+    </div>
+    <div class="place" id="place">
+        <div style="width: 50%;float: left;">
+            <h1>介绍:</h1>
+            <h3><strong> 厂址介绍:</strong></h3>
+            <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;山顶竹器厂</strong>坐落于安徽省<a target="_blank"
+                    href="https://baike.baidu.com/item/%E5%B9%BF%E5%BE%B7/9990522?fromtitle=%E5%AE%89%E5%BE%BD%E7%9C%81%E5%B9%BF%E5%BE%B7%E5%8E%BF&fromid=7242365&fr=aladdin">广德市</a>
+            </p>
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;广德市，安徽省辖县级市，由宣城市代管。位于安徽省东南部，苏浙皖三省八县（市）交界处，介于北纬30°37′—31°12′，东经119°02′—119°
+                40′之间，总面积2165平方千米。
+                广德市活立木总蓄积居全省第一、全国第六，是“中国竹子之乡”、“中国板栗之乡” ，被评为“全国绿化模范县” 、“全国经济林建设示范县” 、“全国山区综合开发示范县”
+                、全省林业产业十强县（市）。2019年8月，广德撤县设市获批，由安徽省直辖宣城市代管。
+                2019年10月8日，被评为2019年度全国综合实力百强县市、2019年度全国新型城镇化质量百强县市。
+                2018年，广德市下辖6个镇、3个乡，另设有1个茶场，常住人口49.9万人，实现地区生产总值（GDP）260.1亿元，分产业看，第一产业增加值22.2亿元，第二产业增加值134.0亿元，第三产业增加值103.9亿元，三次产业结构为8.5：51.5：40.0，按常住人口计算，人均GDP52132元。
+            </p>
+        </div>
+        <div id="place_Map" style="width: 40%;height: 300px;margin-top: 94px;float: left;margin-left: 45px;">
+            <script>
+                var map = new BMap.Map("place_Map"); // 创建地图实例  
+                var point = new BMap.Point(119.428047, 30.883667); // 创建点坐标  
+                map.centerAndZoom(point, 11); // 初始化地图，设置中心点坐标和地图级别  
+                var marker = new BMap.Marker(point);
+                map.addOverlay(marker);
+                map.enableScrollWheelZoom(true);
+                map.addControl(new BMap.NavigationControl());
+                map.addControl(new BMap.ScaleControl());
+                map.addControl(new BMap.OverviewMapControl());
+                map.addControl(new BMap.MapTypeControl()); //开启鼠标滚轮缩放 
+            </script>
+        </div>
+    </div>
+    <div class="kilang" id="kilang">
+        <div style="width: 50%;float: left;">
+            <div>
+                <h3>
+                    <strong>山鼎竹器厂</strong>
+                </h3>
+                <p style="margin-top: 30px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;山鼎竹业成立于2013年，坐落于有着毛竹之乡的安徽省广德市。山鼎竹器厂具有工商注册资格，同时也是广德市柏垫镇商协会重要成员。</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;本厂生产竹席,竹板，竹棒等竹器品，产品在供货量充足的基础上，质量也有保证，同时部分商品可接受定制，如需订制请提前联系，<strong>
+                        联系方式：13856381684，郑先生；</strong> </p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;同时厂内引进生物碳化炉，生产过程绿色环保，材料利用率高，产生污染少</p>
+            </div>
+        </div>
+        <div id="Kilang_Map" style="width: 40%;height: 300px;margin-top: 94px;float: left;margin-left: 45px;">
+            <script>
+                var map = new BMap.Map("Kilang_Map");
+                var point = new BMap.Point(119.277369, 30.761906);
+                var marker = new BMap.Marker(point);
+                map.centerAndZoom(point, 14);
+                map.addOverlay(marker);
+                map.enableScrollWheelZoom(true);
+                map.addControl(new BMap.NavigationControl());
+                map.addControl(new BMap.ScaleControl());
+                map.addControl(new BMap.OverviewMapControl());
+                map.addControl(new BMap.MapTypeControl());
+            </script>
+        </div>
+    </div>
+    <div class="introd" id="introd">
+        <div style="width: 100%;float: left;">
+
+        </div>
+    </div>
+    <div class="exchange" id="exchange"></div>
+    <div class="foot" id="foot">
+        <p>皖备12344455号 @ 2020 山鼎竹器.联系电话：13856381684（郑先生）.</p>
+        <p>本站部分图片和内容来源网络，版权归原作者所有，如果认为侵权请告知，我们会立即删除</p>
+        <p><iframe id="fancybox-frame" style="height: 20px;" name="fancybox-frame1579748917221" frameborder="0" scrolling="no" hspace="0"
+                src="http://i.tianqi.com/index.php?c=code&a=getcode&id=34&h=25&w=280"></iframe></p>
+    </div>
+    <script>
+        let ul = document.getElementById("nav_ul")
+        let li = ul.getElementsByTagName("li")
+        var place = document.getElementById("place")
+        var kilang = document.getElementById("kilang")
+        var introd = document.getElementById("introd")
+        var exchange = document.getElementById("exchange")
+        var navBody = [place, kilang, introd, exchange]
+        navBody[0].style.display = 'block'
+
+        li[0].style.backgroundColor = '#aaa'
+
+
+
+        function restore() {
+            for (var i = 0; i < li.length; i++) {
+                li[i].style.backgroundColor = '#ffffff'
+            }
+            for (var k = 0; k < navBody.length; k++) {
+                navBody[k].style.display = 'none'
+            }
+        }
+
+        function change() {
+            li[0].addEventListener('click', function () {
+                restore();
+                li[0].style.backgroundColor = '#aaa';
+                navBody[0].style.display = 'block'
+            })
+            li[1].addEventListener('click', function () {
+                restore();
+                li[1].style.backgroundColor = '#aaa';
+                navBody[1].style.display = 'block'
+            })
+            li[2].addEventListener('click', function () {
+                restore();
+                li[2].style.backgroundColor = '#aaa';
+                navBody[2].style.display = 'block'
+            })
+            li[3].addEventListener('click', function () {
+                restore();
+                li[3].style.backgroundColor = '#aaa';
+                navBody[3].style.display = 'block'
+            })
+        }
+        change();
+    </script>
+</body>
+
+</html>

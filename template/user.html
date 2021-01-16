@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+        {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>用户中心</title>
+    <link type='text/css' rel="stylesheet" href="{% static 'css/user.css'%}">
+</head>
+
+<body>
+    <div class="warpper">
+        <div class="head">
+            <div class="head_nav">
+                {% if username %}
+                <div class="head_avatar">
+                    <a><img src="{% static 'img/zhuhai.jpeg'%}"></a>
+                </div>
+                <div class="head_info">
+                    <h3>{{ username }}</h3>
+                    <p>{{ date }}</p>
+                </div>
+                {% else %}
+                <div>
+                    <li>
+                        <a href="#">登录</a>
+                    </li>
+                    <li>
+                        <a href="#">注册</a>
+                    </li>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="main">
+            <div class="main_info">
+                <h3>个人信息</h3>
+                {% if username %}
+                <ul>
+                    <li>姓名:{{ username }}</li>
+                    <li>账号:{{ userNub }}</li>
+                    <li>性别:{{ sex }}</li>
+                    <li>住址:{{ place }}</li>
+                    <li>上传文章:</li>
+                </ul>
+                {% else %}
+                <ul>
+                    <li>
+                        <a href="#">登录</a>
+                    </li>
+                    <li>
+                        <a href="#">注册</a>
+                    </li>
+                </ul>
+                {% endif %}
+            </div>
+            <div class="main_message">
+                <div class="message_upload">
+                    <h3>用户上传的文章</h3>
+                    <a class="upload_btn" href="#">上传文章</a>
+                    <ul>
+                        <li>
+                            <a href="#">1</a>
+                        </li>
+                    </ul>
+                    
+                </div>
+                <div class="message_history">
+                    <h3>浏览历史</h3>
+                    <a class="history_btn" href="#">清空历史</a>
+                    <ul>
+                        <li>
+                           <a href="#">1</a>
+                        </li>
+                    </ul>
+                    
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="foot">
+        <p>@山鼎竹器</p>
+    </div>
+</body>
+
+</html>

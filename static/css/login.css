@@ -1,0 +1,185 @@
+.bgImg
+{
+    width: 100%;
+    height: 100%;
+   
+}
+.logBox{
+    width: 441px;
+    height: 423px;
+    text-align: center;
+    border-radius: 2em;
+    position: absolute;
+    margin-top: 174px;
+    margin-left: 744px;
+}
+.logTitle{
+    width: 100%;
+    height: 50px;
+    font-size: 5px;
+    border-top-left-radius: 2em ;
+    border-top-right-radius: 2em;
+}
+.logTitle ul{
+    float: left;
+    list-style: none;
+    font-size: 5px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-top: 0px;
+    margin-left: -41px;
+}
+.logTitle ul li{
+    width: 50%;
+    height: 100%;
+    margin-left: 0px;
+    margin-top: 0;
+    float: left;
+    cursor: pointer;
+    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
+}
+
+
+.loginSpanChange{
+    background-color: #ffffff;
+}
+.signinSpanChange{
+    background-color:#ffffff ;
+}
+.loginSpan{
+    background-color:rgba(255, 255, 255, 0.8);
+}
+.signinSpan{
+    background-color:rgba(255, 255, 255, 0.8);
+}
+.logTitle span{
+    font-size: 6em;
+}
+
+
+
+.logSign{
+    position: absolute;
+    width: 441px;
+    height: 371px;
+    background-color: #ffffff;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+
+}
+
+.login{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    display: block;
+    background-color: #ffffff;
+}
+.login2{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    display: none;
+    background-color: #ffffff;
+}
+.loginAction{
+    display: block;
+}
+.loginOff{
+    display: none;
+}
+.loginForm{
+height: auto;
+margin-top: 2px;
+width: 90%;
+margin-left: 5%;
+}
+.loginForm div{
+    margin-bottom: 1.5em;
+}
+.loginForm input{
+    height: 32px;
+    width: 75%;
+    margin-left: 10%;
+    border: 2px solid #f8f9fa;
+    background-color: #f8f9fa;
+    padding: 0.5rem 1.5rem;
+    margin-top: 20px;
+}
+.loginForm input[type='submit']{
+    border: 2px solid #87dc49 !important;
+    background-color: #87dc49;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 8px 30px;
+    width: 110px;
+    height:40px;
+    margin-left:34px; 
+    cursor: pointer;
+    margin-bottom: 1cm;
+}
+
+.signin{
+    width:100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+}
+.signin2{
+    width:100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+}
+.signinAction{
+    display: block;
+}
+.signinOff{
+    display: none;
+}
+.signinForm{
+    width: 90%;
+    margin-left: 5%;
+    height: auto;
+    margin-top: 2px;
+}
+.signinForm div{
+    margin-bottom: 0px;
+}
+.signinForm input{
+    height: 13px;
+    width: 75%;
+    margin-left: 10%;
+    border: 2px solid #f8f9fa;
+    background-color: #f8f9fa;
+    padding: 0.5rem 1.5rem;
+    margin-top: 20px;
+}
+.signinForm input[type='submit']{
+    border: 2px solid #87dc49 !important;
+    background-color: #87dc49;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 8px 30px;
+    width: 110px;
+    height:40px;
+    margin-left:34px; 
+    cursor: pointer;
+    margin-bottom: 1cm;
+}
+.canvas{
+    
+    position: absolute;
+    width: 70px;
+    height: 33px;
+    margin-left: 13px;
+    margin-top: 20px;
+}
+    
+.login_alert{
+    font-style:red ;
+    text-align: left;
+    margin-left: 70px;
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="static\css\login.css">
+    <link rel="stylesheet" href="static\css\signin.css">
+    <script type="text/javascript" src="static\js\login.js"></script>
+    <script type="text/javascript" src="static\js\carhartl-jquery-cookie-92b7715\jquery.cookie.js"></script>
+    <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+        .foot {
+        width: 100%;
+        height: 100px;
+        text-align: center;
+        float: left;
+        position: relative;
+        bottom: -467px;
+    }
+    </style>
+</head>
+
+<body style="width: 100%;height: 100%;">
+    <div style="width: 60%;height: 100%;">
+
+
+    </div>
+    <div class="background" style="width: 40%; height: 100%;">
+        <div class='logBox'>
+            <div class="logTitle" id="logTitle">
+                <ul id=change_num>
+                    <li id="loginSpan" class="loginSpanChange" onclick="changeLogin()"><span><strong>登录</strong></span>
+                    </li>
+                    <li id="signinSpan" class='signinSpan' onclick="changeSignin()"><span><strong>注册</strong></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="logSign">
+                <div class="login" id="login">
+                    <form class="loginForm" action="loginJudge" method="POST">
+                        <div>
+                            <input type="text" name='username' id="login_usn" placeholder="请输入用户名">
+                            <div class="login_alert" style="color: red;"></div>
+                            {% csrf_token %}
+                        </div>
+                        <div>
+                            <input type="password" name="password" id="login_psw" placeholder="请输入密码">
+                            <div class="login_alert" style="color: red;"></div>
+                        </div>
+                        <button id="login_btn">登录</button>
+                    </form>
+                    <script>
+                        $("#login_usn").blur(function(){
+                            function username_login(){
+                                $.ajax({
+                                    url:"login_ajax",
+                                    contentType:"application/json",
+                                    type:'post',
+                                    dataType:'json',
+                                    data:{username:$("#login_usn").val()},
+                                    success:function(data){
+                                        var alert = document.createElement("p");
+                                        alert.innerText = data;
+                                        $("#login_alert").appendChild(alert)
+                                }
+                        })
+                        $("#login_btn").click(function(){
+                            function login(){
+                                $.ajax({
+                                    url:'login',
+                                    contentType:"application/json",
+                                    type:'post',
+                                    dataType:'json',
+                                    data:{username:$("#login_usn").val(),password:$("#login_psw").val()},
+                                    success:function(data){
+                                        if(data == 1){
+                                            location.href='index',
+                                            $.cookie('status','1',{extends:7,path:'/'});
+                                            
+                                        }
+
+                                    }
+                                })
+                            }
+                        })
+                    </script>
+                </div>
+                <div class="signin" id="signin">
+                    <form action="signin" id="signinForm" class="signinForm" method="POST">
+                        {% csrf_token %}
+                        <div>
+                            <input type="text" name="username" id="signin_username" placeholder="用户昵称">{% if messageN %}
+                            <div class="login_alert" style="color: red;" id="login_alert"></div>
+                        </div>
+                        <div>
+                            <input type="password" name="password" id="password" placeholder="设置密码">
+                        </div>
+                        <div id="pws_div">
+                            <input type="password" name="passwords" id="passwords" placeholder="确认密码">
+                        </div>
+                        <input type="submit" class="button" value="提交">
+                    </form>
+                    <script>
+                        $("#signin_username").blur(function(){
+                            function signin(){
+                                $.ajax({
+                                    url:"signin_ajax",
+                                    contentType:"application/json",
+                                    type:'post',
+                                    dataType:'json',
+                                    data:$("#signin_username").val(),
+                                    success:function(data){
+                                        var alert = document.createElement("p");
+                                        alert.innerText = data;
+                                        $("#login_alert").appendChild(alert)
+                                }
+                        })
+
+                        $("#passwords").blur(function(){
+                            var password = $("#password").val();
+                            var passwords = $("#passwords").val();
+                            if(password != passwords){
+                                var pws_alert = document.createElement("p");
+                                pws_alert.innerText = "请检查重复密码";
+                                pws_alert.style.color = "red";
+                                $("#pws_div").appendChild(pws_alert);
+                            }
+                            else{
+                                pass;
+                            }
+                        })
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="foot" id="foot">
+        <p>皖备12344455号 @ 2020 山鼎竹器.联系电话：13856381684（郑先生）.</p>
+        <p>本站部分图片和内容来源网络，版权归原作者所有，如果认为侵权请告知，我们会立即删除</p>
+        <p><iframe id="fancybox-frame" style="height: 20px;" name="fancybox-frame1579748917221" frameborder="0" scrolling="no" hspace="0"
+                src="http://i.tianqi.com/index.php?c=code&a=getcode&id=34&h=25&w=280"></iframe></p>
+    </div>
+</body>
+
+</html>
